@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everest Digital</title>
   <script>
-    // GitHub Pages SPA redirect
-    // This script takes the current URL and redirects to the index page with the path as a query parameter
-    const pathSegmentsToKeep = 1; // Change this if you have a different base path
-    const l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
-      '/?/' + 
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+    // Improved GitHub Pages SPA redirect
+    (function() {
+      const l = window.location;
+      const basePath = '/Everest-Digital/';
+      
+      // Get the current path
+      const currentPath = l.pathname;
+      
+      // If we're already at the base path, don't redirect
+      if (currentPath === basePath) {
+        return;
+      }
+      
+      // Extract the route after the base path
+      const route = currentPath.replace(basePath, '');
+      
+      // Redirect to the main app with the route as a query parameter
+      if (route) {
+        const newUrl = l.protocol + '//' + l.hostname + basePath + '?/' + route + 
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash;
+        l.replace(newUrl);
+      } else {
+        // If no specific route, just go to the base
+        l.replace(l.protocol + '//' + l.hostname + basePath);
+      }
+    })();
   </script>
 </head>
 <body>
@@ -28,4 +42,3 @@
   </div>
 </body>
 </html>
-
