@@ -17,7 +17,7 @@ const TestimonialsSection = () => {
       position: "Owner",
       company: "Remarkable Digital",
       type: "agency",
-      videoUrl: "/videos/testimonials/ryan-martin-remarkable-digital.mp4",
+      videoUrl: "/Everest-Digital/videos/testimonials/ryan-martin-remarkable-digital.mp4",
       quote: "Everest Digital has been instrumental in scaling our agency's SEO capabilities."
     },
     {
@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
       position: "Owner",
       company: "Ecom Luxx",
       type: "agency",
-      videoUrl: "/videos/testimonials/conal-brady-ecom-luxx.mp4",
+      videoUrl: "/Everest-Digital/videos/testimonials/conal-brady-ecom-luxx.mp4",
       quote: "The white-label SEO services have allowed us to focus on what we do best while delivering exceptional results."
     },
     {
@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
       position: "Owner",
       company: "Jo Dope",
       type: "agency",
-      videoUrl: "/videos/testimonials/oscar-jo-dope.mp4",
+      videoUrl: "/Everest-Digital/videos/testimonials/oscar-jo-dope.mp4",
       quote: "Working with Everest Digital has transformed how we deliver SEO services to our clients."
     },
     // Clients
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
       position: "Founder",
       company: "Level Up Game Plan",
       type: "client",
-      videoUrl: "/videos/testimonials/ed-han-level-up-game-plan.mp4",
+      videoUrl: "/Everest-Digital/videos/testimonials/ed-han-level-up-game-plan.mp4",
       quote: "The SEO results we've achieved with Everest Digital have exceeded all our expectations."
     },
     {
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
       position: "Owner",
       company: "Yurt In The Dirt",
       type: "client",
-      videoUrl: "/videos/testimonials/ryan-smith-yurt-in-the-dirt.mp4",
+      videoUrl: "/Everest-Digital/videos/testimonials/ryan-smith-yurt-in-the-dirt.mp4",
       quote: "Our organic traffic has grown significantly since partnering with Everest Digital."
     }
   ];
@@ -220,7 +220,7 @@ const TestimonialsSection = () => {
                     preload="metadata"
                     onPlay={() => handleVideoPlay(testimonial.id)}
                     onPause={() => handleVideoPause(testimonial.id)}
-                    poster={`/videos/testimonials/poster-${testimonial.id}.jpg`}
+                    poster={`/Everest-Digital/videos/testimonials/poster-${testimonial.id}.jpg`}
                   >
                     <source src={testimonial.videoUrl} type="video/mp4" />
                     Your browser does not support the video tag.
